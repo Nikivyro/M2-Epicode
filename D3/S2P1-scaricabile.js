@@ -35,6 +35,7 @@ if (number < 5) {
 }else if(number >= 20){
   console.log("Huge"); 
 }
+
 //ESERCIZI SUI CICLI: 
 
 /* ESERCIZIO 3
@@ -42,7 +43,6 @@ if (number < 5) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 for (let i = 0; i <=10; i++) {
   if ((i === 3) || (i === 8)) {
     continue;
@@ -68,10 +68,12 @@ for (let index = 0; index <=15; index++) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let n3 = 3
-let n4 = 5
+let n3 = 8
+let n4 = 8
 if (n3 === 8 || n4 === 8 || n3 + n4 === 8 || n3 - n4 === 8) {
   console.log("Le due variabili che sono state dichiarate sono 8 o la loro addizione/sottrazione è uguale a 8"); 
+}else {
+  console.log("Le due variabili inserite non sono 8 oppure la loro addizione/sottrazione è diversa a 8");
 }
 
 /* ESERCIZIO EXTRA 2
@@ -82,7 +84,7 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 // let totalShoppingCart = 51
-// let costiSpedizione = 10
+// const costiSpedizione = 10
 // let carrelloConSpedizione = 0
 // if (totalShoppingCart > 50) {
 //   console.log('La spedizone è gratuita');
@@ -90,14 +92,15 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 //   carrelloConSpedizione = totalShoppingCart + costiSpedizione
 //   console.log('Il totale del tuo carrello è ' + carrelloConSpedizione);
 // }
+
 /* ESERCIZIO EXTRA 3
   Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando, usando l'algoritmo del codice precedente, se le spedizioni siano gratuite oppure no e e calcolando il totale.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let totalShoppingCart = 70
-let costiSpedizione = 10
+let totalShoppingCart = 30
+const costiSpedizione = 10
 let carrelloConSpedizione = 0
 let totaleBlackFriday = totalShoppingCart - ((totalShoppingCart * 20) / 100)
 if (totaleBlackFriday > 50) {
