@@ -22,7 +22,7 @@ function crazySum(num1, num2){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function boundary(num3, numbool){
+function boundary(num3, bool){
     if((num3 >= 20) && (num3 >= 100) || (num3 === 400)){    
         console.log(`Il numero inserito ${num3} è compreso tra 20 e 100 oppure è uguale a 400`);
     } else {
@@ -39,7 +39,7 @@ function reverseString(string){
     let stringSplit = string.split("")
     let stringReverse = stringSplit.reverse()
     let stringFinal = stringReverse.join("")
-    console.log(stringFinal)
+    //console.log(stringFinal)
 }
 reverseString("EPICODE")
 
@@ -56,11 +56,18 @@ function upperFirst(string2){
     return frase.join(" ")
 }
 let result = upperFirst("ciao mi chiamo nikolaas")
-console.log(result);
+//console.log(result);
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
 */
-
+function giveMeRandom(n){
+    let arrRandom = []
+    for (let a = 0; a < n; a++) {
+        arrRandom = Math.floor(Math.random() * 10);
+        console.log(arrRandom)
+    }
+}
+giveMeRandom(4)
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 //EXTRA:
