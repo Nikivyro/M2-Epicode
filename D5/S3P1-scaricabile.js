@@ -60,15 +60,21 @@ let result = upperFirst("ciao mi chiamo nikolaas")
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
 */
+
+/* SCRIVI QUI LA TUA RISPOSTA */
 function giveMeRandom(n){
-    let arrRandom = []
-    for (let a = 0; a < n; a++) {
-        arrRandom = Math.floor(Math.random() * 10);
-        console.log(arrRandom)
+    if ((n > 0) && n < 10){
+        let arrRandom = []
+        for (let a = 0; a < n; a++) {
+            arrRandom[a] = Math.floor(Math.random() * 10);            
+        }   
+        return arrRandom
+    } else {
+        return console.log("Il numero da inserire deve essere compreso tra 0 e 10")
     }
 }
-giveMeRandom(4)
-/* SCRIVI QUI LA TUA RISPOSTA */
+// let result2 = giveMeRandom(5)
+// console.log(result2);
 
 //EXTRA:
 /* ESERCIZIO 1
@@ -76,6 +82,12 @@ giveMeRandom(4)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function area(l1, l2){
+    let area = l1 * l2
+    return area
+}
+// let resutlArea = area(5,7)
+// console.log(resutlArea)
 
 /* ESERCIZIO 2
  Scrivi una funzione chiamata "crazyDiff" che calcola la differenza assoluta tra un numero fornito e 19.
@@ -83,10 +95,28 @@ giveMeRandom(4)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function crazyDiff(num4){
+    let numMax = 19
+    let diff = 0
+    
+    if (numMax > num4){
+        diff = numMax - num4
+    } else {
+        diff = num4 - numMax
+    }
+
+    if (diff > numMax){
+        diff = diff * 3
+    }
+    return diff
+}
+let resultDiff = crazyDiff(400)
+console.log(resultDiff)
 
 /* ESERCIZIO 3
  Scrivi una funzione chiamata "codify" che accetta una stringa come parametro.
- La funzione deve aggiungere la parola "code" all'inizio della stringa fornita e ritornare il risultato, ma se la stringa fornita comincia proprio con "code" allora deve ritornarla senza modifiche.
+ La funzione deve aggiungere la parola "code" all'inizio della stringa fornita e ritornare il risultato, ma se la stringa fornita comincia proprio con 
+ "code" allora deve ritornarla senza modifiche.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
