@@ -53,10 +53,10 @@ function upperFirst(string2){
     for (let i = 0; i < frase.length; i++) {
         frase[i] = frase[i][0].toUpperCase() + frase[i].substr(1);        
     }
-    frase.join(" ");
-    console.log(frase)
+    return frase.join(" ")
 }
-upperFirst("ciao mi chiamo nikolaas")
+let result = upperFirst("ciao mi chiamo nikolaas")
+console.log(result);
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
 */
