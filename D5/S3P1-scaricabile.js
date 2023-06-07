@@ -97,21 +97,9 @@ let resutlArea = area(5,7)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function crazyDiff(num4){
-    let numMax = 19
-    let diff = 0
-    
-    if (numMax > num4){
-        diff = numMax - num4
-    } else {
-        diff = num4 - numMax
-    }
-
-    if (diff > numMax){
-        diff = diff * 3
-    }
-    return diff
+    return Math.abs(num4 > 19) > 19 ? Math.abs(num4 - 19) * 3 : Math.abs(num4 - 19)
 }
-let resultDiff = crazyDiff(400)
+let resultDiff = crazyDiff(15)
 // console.log(resultDiff)
 
 /* ESERCIZIO 3
