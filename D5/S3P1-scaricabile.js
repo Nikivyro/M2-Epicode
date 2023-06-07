@@ -110,11 +110,15 @@ let resultDiff = crazyDiff(15)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function codify(string3){
-    let code = "code"    
-    let frase = code.concat("",string3)
-    console.log(frase);
+    let code = "code"
+    if (string3.startsWith(code)){
+        return string3
+    }
+    return `${code} ${string3} `
 }
-codify("pippo")
+let resultCodivy = codify("code")
+// console.log(resultCodivy)
+
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
  La funzione deve controllare che tale parametro sia un multiplo di 3 o di 7, e in tal caso tornare true; altrimenti deve tornare false.
@@ -143,4 +147,4 @@ function cutString(string4){
    return cuttedString
 }
 let resultCutString = cutString("Ciao a tutti")
-console.log(resultCutString)
+// console.log(resultCutString)
