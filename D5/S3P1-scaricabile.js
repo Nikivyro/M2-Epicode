@@ -7,29 +7,28 @@
 function crazySum(num1, num2){
     let sum = 0
     if (num1 === num2){
-        sum = (num1 + num2) * 3
+        return sum = (num1 + num2) * 3
     } else {
-        sum = num1 + num2
+        return sum = num1 + num2
     }
-    console.log(sum);
 }
-//crazySum(4,5)
-// crazySum(4,4)
-
+let resultCrazySum = crazySum(4,5)
+// console.log(resultCrazySum)
 /* ESERCIZIO 2
  Scrivi una funzione chiamata "boundary", che accetta un numero intero come parametro e ritorna true se tale parametro è incluso tra 20 e 100 (incluso)
  o se è esattamente uguale a 400.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function boundary(num3, bool){
-    if((num3 >= 20) && (num3 >= 100) || (num3 === 400)){    
-        console.log(`Il numero inserito ${num3} è compreso tra 20 e 100 oppure è uguale a 400`);
-    } else {
-        console.log(`Il numero inserito ${num3} non è compreso tra 20 e 100 oppure è uguale a 400`);
+function boundary(num3){
+    if((num3 < 100 && num3 > 20) || (num3 === 400)){    
+        return true
     }
+    return false
 }
-// boundary(99)
+let resultBoundary = boundary(400)
+// console.log(resultBoundary);
+
 /* ESERCIZIO 3
  Scrivi una funzione chiamata "reverseString", che accetta una stringa come parametro e la ritorna invertita (es.: EPICODE => EDOCIPE).
 */
@@ -39,9 +38,10 @@ function reverseString(string){
     let stringSplit = string.split("")
     let stringReverse = stringSplit.reverse()
     let stringFinal = stringReverse.join("")
-    //console.log(stringFinal)
+    return stringFinal
 }
-reverseString("EPICODE")
+let resultReverseString = reverseString("EPICODE")
+// console.log(resultReverseString)
 
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "upperFirst", che accetta una stringa come parametro e la ritorna rendendo maiuscola ogni lettera iniziale di ogni parola.
@@ -57,6 +57,7 @@ function upperFirst(string2){
 }
 let result = upperFirst("ciao mi chiamo nikolaas")
 //console.log(result);
+
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
 */
@@ -73,7 +74,7 @@ function giveMeRandom(n){
         return console.log("Il numero da inserire deve essere compreso tra 0 e 10")
     }
 }
-// let result2 = giveMeRandom(5)
+let result2 = giveMeRandom(5)
 // console.log(result2);
 
 //EXTRA:
@@ -86,7 +87,7 @@ function area(l1, l2){
     let area = l1 * l2
     return area
 }
-// let resutlArea = area(5,7)
+let resutlArea = area(5,7)
 // console.log(resutlArea)
 
 /* ESERCIZIO 2
@@ -111,7 +112,7 @@ function crazyDiff(num4){
     return diff
 }
 let resultDiff = crazyDiff(400)
-console.log(resultDiff)
+// console.log(resultDiff)
 
 /* ESERCIZIO 3
  Scrivi una funzione chiamata "codify" che accetta una stringa come parametro.
@@ -120,7 +121,12 @@ console.log(resultDiff)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+function codify(string3){
+    let code = "code"    
+    let frase = code.concat("",string3)
+    console.log(frase);
+}
+codify("pippo")
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
  La funzione deve controllare che tale parametro sia un multiplo di 3 o di 7, e in tal caso tornare true; altrimenti deve tornare false.
@@ -128,9 +134,25 @@ console.log(resultDiff)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function check3and7(num5){
+    if ((num5 % 3 == 0) ||(num5 % 7 == 0) ){
+        return true
+    } else{
+        return false
+    }
+}
+let resultCheck3and7 = check3and7(2)
+// console.log(resultCheck3and7);
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "cutString", che accetta una stringa come parametro e la ritorna senza il primo e l'ultimo carattere.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(string4){
+//    let cuttedString = string4.slice(1, -1);
+   let cuttedString = string4.slice(1, string4.length -1);
+   return cuttedString
+}
+let resultCutString = cutString("Ciao a tutti")
+console.log(resultCutString)
