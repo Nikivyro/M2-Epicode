@@ -67,7 +67,7 @@ function giveMeRandom(n){
     if ((n > 0) && n < 10){
         let arrRandom = []
         for (let a = 0; a < n; a++) {
-            arrRandom[a] = Math.floor(Math.random() * 10);            
+            arrRandom[a] = Math.floor(Math.random() * 11);            
         }   
         return arrRandom
     } else {
