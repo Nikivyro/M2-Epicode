@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2 - D7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Cerca il tuo lavoro</h1>
+        <div class="container">
+            <div class="form">
+                <input type="text" id="inputJob" placeholder="Scrivi una professione">
+                <input type="text" id="inputLocation" placeholder="Stato, Regione, Città">
+                <button type="submit" id="btnSearch"><i class="bi bi-search"></i> Cerca</button>
+                <button id="btnRemove"><i class="bi bi-trash3"></i> Rimuovi filtri</button>
+            </div>
+        </div>
+        <div class="container">
+            <span id="counter"></span>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Pozione lavorativa</th>
+                  <th>Dove</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="scaricabile.js"></script>
+</body>
+</html>
