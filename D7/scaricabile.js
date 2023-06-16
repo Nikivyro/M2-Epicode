@@ -135,7 +135,7 @@ function search() {
 
   tableBody.innerHTML = ''; 
 
-  // Filtra i prodotti in base ai criteri di ricerca
+  // Filtra i prodotti in base ai valori inseriti negli input
   const filteredJobs = jobs.filter(job => {
     const filteredjob = job.title.toLowerCase().includes(jobName);
     const filteredlocation = job.location.toLowerCase().includes(locationName);
@@ -146,9 +146,9 @@ function search() {
   // Contatore per le posizione lavorative trovate
   counterContainer.textContent = `Posizioni lavorative trovate: ${filteredJobs.length}`;
 
-  // Stampa i risultati filtrati all'interno di una tabella
+  // Recupero i valori filtrati e li stampo all'interno di una tabella
   if (filteredJobs.length === 0) {
-    // Mostra messaggio di errore se non ci sono risultati
+    // Messaggio di errore in caso di nessun risultato trovato
     errorContainer.textContent = 'Nessun risultato trovato. Riprova una ricerca';
     errorContainer.style.backgroundColor = "rgba(183, 28, 28, 0.50)";
   } else {
@@ -168,6 +168,7 @@ function search() {
   }
 }
 
+// Funzione per resettare i campi
 function resetFields() {
   document.getElementById('inputJob').value = '';
   document.getElementById('inputLocation').value = '';
@@ -178,7 +179,7 @@ function resetFields() {
 }
 
 
-// Aggiungi event listener al pulsante di ricerca
+// Aggiungi event listener sul pulsante di ricerca
 document.getElementById('btnSearch').addEventListener('click', search);
 
 // Gestisco il filtro anche tramite il keydown del tasto ENTER della tastiera
@@ -194,5 +195,5 @@ document.getElementById("inputLocation").addEventListener("keydown", function (e
 });
 
   
-// Aggiungi event listener al pulsante di reset
+// Aggiungi event listener sul pulsante di reset avviando la funzione di reset
 document.getElementById('btnRemove').addEventListener('click', resetFields);
