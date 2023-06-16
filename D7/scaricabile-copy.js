@@ -125,74 +125,84 @@ const jobs = [
   },
 ]
 
-const tableBody = document.getElementById('tableBody');
-const counterContainer = document.getElementById('counter');
-const errorContainer = document.getElementById('error');
+// Creo una tabella con tutti i valori dell'Array JOBS così da poterli visualizzare subito
+function createTable() {
+  const tableBody = document.getElementById("tableBody");
+  tableBody.innerHTML = "";
 
-function search() {
-  const jobName = document.getElementById('inputJob').value.toLowerCase();
-  const locationName = document.getElementById('inputLocation').value.toLowerCase();
-
-  tableBody.innerHTML = ''; 
-
-  // Filtra i prodotti in base ai criteri di ricerca
-  const filteredJobs = jobs.filter(job => {
-    const filteredjob = job.title.toLowerCase().includes(jobName);
-    const filteredlocation = job.location.toLowerCase().includes(locationName);
-
-    return filteredjob && filteredlocation;
-  });
-
-  // Contatore per le posizione lavorative trovate
-  counterContainer.textContent = `Posizioni lavorative trovate: ${filteredJobs.length}`;
-
-  // Stampa i risultati filtrati all'interno di una tabella
-  if (filteredJobs.length === 0) {
-    // Mostra messaggio di errore se non ci sono risultati
-    errorContainer.textContent = 'Nessun risultato trovato. Riprova una ricerca';
-    errorContainer.style.backgroundColor = "rgba(183, 28, 28, 0.50)";
-  } else {
-    for (let i = 0; i < filteredJobs.length; i++) {
-      const job = filteredJobs[i];
-    
-      const row = document.createElement('tr');
-      const nameCell = document.createElement('td');
-      nameCell.textContent = job.title;
-      const categoryCell = document.createElement('td');
-      categoryCell.textContent = job.location;
-  
-      row.appendChild(nameCell);
-      row.appendChild(categoryCell);
-      tableBody.appendChild(row);
-    }
+  // Aggiungo tutte le righe alla tabella con i lavori e le location
+  for (let i = 0; i < jobs.length; i++) {
+    const singleJob = jobs[i];
+    const tr = document.createElement("tr");
+    const td1 = document.createElement("td");
+    td1.textContent = singleJob.title;
+    const td2 = document.createElement("td");
+    td2.textContent = singleJob.location;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tableBody.appendChild(tr);
   }
 }
 
-function resetFields() {
-  document.getElementById('inputJob').value = '';
-  document.getElementById('inputLocation').value = '';
-  tableBody.innerHTML = '';
-  counterContainer.textContent = '';
-  errorContainer.textContent = '';
-  errorContainer.style.backgroundColor = "rgba(255, 255, 255, 0)"
+//Genero una tabella nuova con i valori filtrati dai due input
+function createNewTable() {
+  const inputJob = document.getElementById("inputJob").value.toLowerCase();
+  const inputLocation = document.getElementById("inputLocation").value.toLowerCase();
+  const tableBody = document.getElementById("tableBody");
+  const counter = document.getElementById("counter");
+
+  tableBody.innerHTML = "";
+  counter.textContent = "";
+
+  // Filtro gli oggetti in base ai valori degli input
+  const jobFiltered = jobs.filter(job => {
+    const title = job.title.toLowerCase();
+    const location = job.location.toLowerCase();
+    return title.includes(inputJob) && location.includes(inputLocation);
+  });
+
+  // Aggiorna il counter con il numero di risultati trovati
+  counter.textContent = `Posizioni lavorative trovate: ${jobFiltered.length}`;
+
+  // Aggiungi le righe alla tabella per i risultati filtrati
+  for (let i = 0; i < jobFiltered.length; i++) {
+    const job = jobFiltered[i];
+    const tr = document.createElement("tr");
+    const td1 = document.createElement("td");
+    td1.textContent = job.title;
+    const td2 = document.createElement("td");
+    td2.textContent = job.location;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tableBody.appendChild(tr);
+  }
 }
 
-
-// Aggiungi event listener al pulsante di ricerca
-document.getElementById('btnSearch').addEventListener('click', search);
+// Funzione per gestire l'evento di ricerca
+function searchResult() {
+  createNewTable();
+}
+// Al click del button eseguo la funzione di ricerca
+document.getElementById("btnSearch").addEventListener("click", searchResult);
 
 // Gestisco il filtro anche tramite il keydown del tasto ENTER della tastiera
 document.getElementById("inputJob").addEventListener("keydown", function (evt) {
-  if (evt.key === "Enter") {
-      search();
-    }
+if (evt.key === "Enter") {
+    createNewTable();
+  }
 });
 document.getElementById("inputLocation").addEventListener("keydown", function (evt) {
-  if (evt.key === "Enter") {
-    search();
+if (evt.key === "Enter") {
+    createNewTable();
   }
 });
 
-  
-// Aggiungi event listener al pulsante di reset
-document.getElementById('btnRemove').addEventListener('click', resetFields);
+// Pulsate di reset che pulisce i campi di input
+document.getElementById("btnRemove").addEventListener("click", function(){
+  inputJob.value = "";
+  inputLocation.value = "";
+  createNewTable();
+})
+
+// Genera la tabella iniziale
+createTable();
