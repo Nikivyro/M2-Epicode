@@ -168,12 +168,10 @@ function createNewTable() {
   for (let i = 0; i < jobFiltered.length; i++) {
     const job = jobFiltered[i];
     const tr = document.createElement("tr");
-    
     const td1 = document.createElement("td");
     td1.textContent = job.title;
     const td2 = document.createElement("td");
     td2.textContent = job.location;
-    
     tr.appendChild(td1);
     tr.appendChild(td2);
     tableBody.appendChild(tr);

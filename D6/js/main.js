@@ -7,7 +7,7 @@ function changeH1text(){
 /* CAMBIO BG-COLOR */
 function changeBgColor(){
     let body = document.getElementsByTagName("body")[0]
-    body.classList.add('bg-light')
+    body.classList.toggle('bg-light')
 }
 
 /* CAMBIO ADDRESS */
@@ -20,7 +20,7 @@ function changeAdress() {
 function addClass() {
     let links = document.getElementsByClassName("link")    
     for (const link of links) {
-        link.classList.add("bg-yellow")        
+        link.classList.toggle("bg-yellow")        
     }
 }
 
