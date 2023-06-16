@@ -139,7 +139,6 @@ function search() {
   const filteredJobs = jobs.filter(job => {
     const filteredjob = job.title.toLowerCase().includes(jobName);
     const filteredlocation = job.location.toLowerCase().includes(locationName);
-
     return filteredjob && filteredlocation;
   });
 
@@ -156,13 +155,13 @@ function search() {
       const job = filteredJobs[i];
     
       const row = document.createElement('tr');
-      const nameCell = document.createElement('td');
-      nameCell.textContent = job.title;
-      const categoryCell = document.createElement('td');
-      categoryCell.textContent = job.location;
+      const jobCell = document.createElement('td');
+      jobCell.textContent = job.title;
+      const locationCell = document.createElement('td');
+      locationCell.textContent = job.location;
   
-      row.appendChild(nameCell);
-      row.appendChild(categoryCell);
+      row.appendChild(jobCell);
+      row.appendChild(locationCell);
       tableBody.appendChild(row);
     }
   }
