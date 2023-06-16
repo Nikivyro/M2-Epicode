@@ -125,6 +125,8 @@ const jobs = [
   },
 ]
 
+const tableHead = document.getElementById('tableHead');
+tableHead.style.display = "none";
 const tableBody = document.getElementById('tableBody');
 const counterContainer = document.getElementById('counter');
 const errorContainer = document.getElementById('error');
@@ -133,7 +135,8 @@ function search() {
   const jobName = document.getElementById('inputJob').value.toLowerCase();
   const locationName = document.getElementById('inputLocation').value.toLowerCase();
 
-  tableBody.innerHTML = ''; 
+  tableBody.innerHTML = '';
+  tableHead.style.display = "table-header-group";
 
   // Filtra i prodotti in base ai valori inseriti negli input
   const filteredJobs = jobs.filter(job => {
@@ -143,7 +146,7 @@ function search() {
   });
 
   // Contatore per le posizione lavorative trovate
-  counterContainer.textContent = `Posizioni lavorative trovate: ${filteredJobs.length}`;
+  counterContainer.innerHTML = `Posizioni lavorative trovate: <b>${filteredJobs.length}</b>`;
 
   // Recupero i valori filtrati e li stampo all'interno di una tabella
   if (filteredJobs.length === 0) {
@@ -172,6 +175,7 @@ function resetFields() {
   document.getElementById('inputJob').value = '';
   document.getElementById('inputLocation').value = '';
   tableBody.innerHTML = '';
+  tableHead.style.display = "none";
   counterContainer.textContent = '';
   errorContainer.textContent = '';
   errorContainer.style.backgroundColor = "rgba(255, 255, 255, 0)"

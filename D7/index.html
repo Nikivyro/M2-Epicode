@@ -15,16 +15,22 @@
         <h1>Cerca il tuo lavoro</h1>
         <div class="container">
             <div class="form">
+              <div>
+                <i class="bi bi-pc-display-horizontal"></i>
                 <input type="text" id="inputJob" placeholder="Scrivi una professione">
+              </div>  
+              <div>
+                <i class="bi bi-geo-alt"></i>
                 <input type="text" id="inputLocation" placeholder="Stato, Regione, Città">
-                <button type="submit" id="btnSearch"><i class="bi bi-search"></i> Cerca</button>
-                <button id="btnRemove"><i class="bi bi-trash3"></i> Rimuovi filtri</button>
+              </div>
+              <button type="submit" id="btnSearch"><i class="bi bi-search"></i> Cerca</button>
+              <button id="btnRemove"><i class="bi bi-trash3"></i> Rimuovi filtri</button>
             </div>
         </div>
         <div class="container">
             <span id="counter"></span>
             <table class="table">
-              <thead>
+              <thead id="tableHead">
                 <tr>
                   <th>Pozione lavorativa</th>
                   <th>Dove</th>
